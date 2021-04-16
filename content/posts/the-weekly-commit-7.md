@@ -5,12 +5,15 @@ draft: false
 ---
 I spotted a wild Big O application!; exciting as I’ve only experienced it in a controlled-environment. I’ll post the outline here so knowledgeable people can say how close(or far off) I was.
 #### Naive
-`for i in x:
+```python
+for i in x:
 	for j, k in enumerate(y):
 		if i == k:
 			result.append(i)
+```
 #### More Performant at Scale(Big O)
-`for i in x:
+```python
+for i in x:
 	index = 0
 	for j, k in enumerate(y):
 		if i == k:
@@ -18,7 +21,7 @@ I spotted a wild Big O application!; exciting as I’ve only experienced it in a
 			result.append(i)
 			break 
 	del y[index] # important
-`
+```
 The naive is n^2(nested for loop, easy), and the improved implementation I **think** is `n log n`, since y becomes smaller. An exciting moment since I **thought** unprompted while coding about Big O. Right or wrong, I’m excited to learn more.  
 Respect the little gains, they prompt bigger ones.
 ### The Doing
